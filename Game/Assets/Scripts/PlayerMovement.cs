@@ -66,10 +66,16 @@ public class PlayerMovement : MonoBehaviour
             AnimateSelect("DownLeft");
         else if (move == new Vector2(-1, 0))
             AnimateSelect("Left");
-        else if (move == new Vector2(-1, 1))
+        else if (move == new Vector2(-1, 1).normalized)
             AnimateSelect("UpLeft");
         else if (move == new Vector2(0, 1))
             AnimateSelect("Up");
+        else if (move == new Vector2(1, 1).normalized)
+            AnimateSelect("UpRight");
+        else if (move == new Vector2(1, 0))
+            AnimateSelect("Right");
+        else if (move == new Vector2(1, -1).normalized)
+            AnimateSelect("DownRight");
     }
     private void AnimateSelect(string play)
     {
